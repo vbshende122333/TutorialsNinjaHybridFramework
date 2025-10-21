@@ -17,6 +17,6 @@ Feature: Login Functionality
     Then User should get Warning message
     Examples:
       | Email           | Password    |
-      | abbqab@abc.com  | ajdhajdada  |
-      | ajffqasdjakf    | jhffjkwe    |
-      | dadhfqffskjkfkd | 323232      |
+      | abc.com         | ajdhajdada  |
+      | ajfqasdjakf     | jhffjkwe    |
+      | dahfqffskjkfkd  | 323232      |

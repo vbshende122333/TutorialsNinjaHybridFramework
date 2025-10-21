@@ -18,5 +18,5 @@ Feature: Login Functionality
     Examples:
       | Email           | Password    |
       | abbqab@abc.com  | ajdhajdada  |
-      | ajffqasdjakf    | jhffjkwe    |
-      | dadhfqffskjkfkd | 323232      |
+      | ajffqa@abc.com  | jhffjkwe    |
+      | dadhfq@abc.comd | 323232      |

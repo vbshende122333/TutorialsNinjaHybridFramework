@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         tags = "@Smoke",
         plugin = {
                 "pretty",
+                "html:target/cucumber-report.html",
                 "json:target/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
