@@ -16,7 +16,7 @@ import java.util.Properties;
 
 public class Hooks {
 
-    WebDriver driver;
+    private WebDriver driver;
     private ConfigReader configReader;
     private CommonUtils commonUtils;
     private boolean isScenarioLogged = false;
@@ -25,7 +25,11 @@ public class Hooks {
     public void setUp(){
         configReader = new ConfigReader();
         Properties prop = configReader.initializeProperties();
-        DriverManager.initializeDriver(prop.getProperty("browser"));
+        // Pick browser per thread automatically
+        String[] browsers = System.getProperty("browsers", "chrome,edge").split(",");
+        int threadIndex = (int) (Thread.currentThread().getId() % browsers.length);
+        String browser = browsers[threadIndex];
+        DriverManager.initializeDriver(browser);
         driver = DriverManager.getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -50,11 +54,12 @@ public class Hooks {
             // Here we log step keyword + step text as available in scenario (simplified)
 //            System.out.println(scenario.getStatus() + " " + timeStamp);
             // Capture screenshot bytes
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-
-            // Attach to scenario for HTML report
-            scenario.attach(screenshot, "image/png", scenario.getName() + "_" + timeStamp);
-
+            try {
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", scenario.getName() + "_" + timeStamp);
+            } catch (Exception e) {
+                System.out.println("Screenshot capture failed: " + e.getMessage());
+            }
 
         }
     }

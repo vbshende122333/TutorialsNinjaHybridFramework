@@ -61,6 +61,8 @@ public class DriverManager {
     }
 
     public static void quitDriver(){
-        driver.get().quit();
+        WebDriver driverInstance = driver.get();
+        driverInstance.quit();
+        driver.remove();
     }
 }
