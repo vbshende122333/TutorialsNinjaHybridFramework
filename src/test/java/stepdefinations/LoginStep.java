@@ -1,8 +1,8 @@
 package stepdefinations;
 
 import io.cucumber.java.en.*;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
