@@ -1,0 +1,10 @@
+<extentreports>
+    <configuration>
+        <theme>standard</theme>
+        <encoding>utf-8</encoding>
+        <protocol>https</protocol>
+        <reportName>TutorialsNinja Automation Report</reportName>
+        <documentTitle>TutorialsNinja - Automation Execution Report</documentTitle>
+        <timeStampFormat>dd MMM yyyy HH:mm:ss</timeStampFormat>
+    </configuration>
+</extentreports>
