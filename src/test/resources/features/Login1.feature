@@ -1,6 +1,6 @@
 Feature: Login Functionality
 
-  @Smoke
+  @Regression
   Scenario: Login with valid credentials
     Given User has navigate to login page
     When User enters valid email address "amotooticap9@gmail.com" into email field
@@ -8,7 +8,7 @@ Feature: Login Functionality
     And User clicks on login button
     Then User should get successfully logged in
 
-  @Smoke
+  @Regression
   Scenario Outline: Login with invalid credentials
     Given User has navigate to login page
     When User enters invalid email address <Email> into email field
