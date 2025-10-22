@@ -1,7 +1,7 @@
 Feature: Login Functionality
 
   @Smoke
-  Scenario: Login with valid credentials
+  Scenario: Login with valid credentials for User 3
     Given User has navigate to login page
     When User enters valid email address "amotooticap9@gmail.com" into email field
     And User has entered valid password "12345" into password field
@@ -9,7 +9,7 @@ Feature: Login Functionality
     Then User should get successfully logged in
 
   @Smoke
-  Scenario Outline: Login with invalid credentials
+  Scenario Outline: Login with invalid credentials for User 4
     Given User has navigate to login page
     When User enters invalid email address <Email> into email field
     And User has entered invalid password <Password> into password field
@@ -17,6 +17,6 @@ Feature: Login Functionality
     Then User should get Warning message
     Examples:
       | Email           | Password    |
-      | abbqab@abc.com  | ajdhajdada  |
-      | ajffqa@abc.com  | jhffjkwe    |
-      | dadhfq@abc.comd | 323232      |
+      | (7)qab@abc.com  | ajdhajdada  |
+      | (8)fqa@abc.com  | jhffjkwe    |
+      | (9)hfq@abc.comd | 323232      |
